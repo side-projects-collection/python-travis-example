@@ -1,0 +1,43 @@
+# Ubuntu release codename
+# visit: http://releases.ubuntu.com/
+dist: xenial
+
+language: python
+
+cache: pip
+
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.8-dev"
+  - "nightly"
+
+virtualenv:
+  system_site_packages: false
+
+matrix:
+  allow_failures:
+      - python: "nightly"
+
+before_install:
+  - python --version
+  - pip install -U pip
+  - pip install -U pytest
+  - pip install codecov
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install -e .
+
+# command to run unit tests
+script:
+  - pytest
+
+# submit coverage
+after_success:
+  - codecov
