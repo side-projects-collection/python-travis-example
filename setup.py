@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 metadata = {}
-with open("hello_pkg/__init__.py") as fp:
+with open("python_travis/__init__.py") as fp:
     exec(fp.read(), metadata)
 
 setuptools.setup(
