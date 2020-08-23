@@ -2,6 +2,9 @@
 # visit: http://releases.ubuntu.com/
 dist: xenial
 
+# Disable sudo to speed up the build
+sudo: false
+
 language: python
 
 cache: pip
