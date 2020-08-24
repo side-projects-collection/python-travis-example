@@ -2,8 +2,7 @@
 # visit: http://releases.ubuntu.com/
 dist: xenial
 
-# Disable sudo to speed up the build
-sudo: false
+os: linux
 
 language: python
 
@@ -22,7 +21,7 @@ python:
 virtualenv:
   system_site_packages: false
 
-matrix:
+jobs:
   include:
     # =========================== macOS ==============================
     - name: "Python 2.7.14 on macOS 10.13"
